@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<txcop:outputProfiles version="2" xmlns:txcop="http://schemas.ToolsCenter.org/TeXnicCenter/OutputProfiles.xsd">
+	<outputProfileList>
+		<outputProfile name="LaTeX &#8680; PDF (docu)" stopOnLatexError="false">
+			<texCommand execute="true" path="C:\Program Files\MiKTeX\miktex\bin\x64\pdflatex.exe" arguments="-synctex=-1 -output-directory=out -aux-directory=out -max-print-line=120 -interaction=nonstopmode &quot;%wm&quot;"/>
+			<bibTexCommand execute="true" path="C:\Program Files\MiKTeX\miktex\bin\x64\bibtex.exe" arguments="build\%tm.aux"/>
+			<makeIndexCommand execute="true" path="C:\Program Files\MiKTeX\miktex\bin\x64\makeindex.exe" arguments="&quot;%tm.idx&quot; -t &quot;%tm.ilg&quot; -o &quot;%tm.ind&quot;"/>
+			<preProcessors>
+				<processor name="py" path="python" arguments="preprocessor.py" inputFile="" outputFile=""/>
+			</preProcessors>
+			<postProcessors/>
+			<viewer path="C:\Program Files\SumatraPDF\SumatraPDF.exe -inverse-search &quot;\&quot;C:\Program Files\TeXnicCenter\TeXnicCenter.exe\&quot; /ddecmd \&quot;[goto('%f','%l')]\&quot;&quot;" closeBeforeCompilation="false">
+				<viewProjectCommand type="commandLine">
+					<commandLineCommand path="C:\Program Files\SumatraPDF\SumatraPDF.exe -inverse-search &quot;\&quot;C:\Program Files\TeXnicCenter\TeXnicCenter.exe\&quot; /ddecmd \&quot;[goto('%f','%l')]\&quot;&quot;" arguments="out\%tm.pdf"/>
+					<ddeCommand path="" server="" topic="System" command=""/>
+				</viewProjectCommand>
+				<viewCurrentFileCommand type="commandLine">
+					<commandLineCommand path="C:\Program Files\SumatraPDF\SumatraPDF.exe -inverse-search &quot;\&quot;C:\Program Files\TeXnicCenter\TeXnicCenter.exe\&quot; /ddecmd \&quot;[goto('%f','%l')]\&quot;&quot;" arguments="out\%tm.pdf"/>
+					<ddeCommand path="C:\Program Files\SumatraPDF\SumatraPDF.exe -inverse-search &quot;\&quot;C:\Program Files\TeXnicCenter\TeXnicCenter.exe\&quot; /ddecmd \&quot;[goto('%f','%l')]\&quot;&quot;" server="sumatra" topic="control" command="[ForwardSearch(build\&quot;%bm.pdf&quot;,&quot;%Wc&quot;,%l,0,0,1)]"/>
+				</viewCurrentFileCommand>
+				<viewCloseCommand type="commandLine">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="" server="" topic="System" command=""/>
+				</viewCloseCommand>
+			</viewer>
+		</outputProfile>
+	</outputProfileList>
+</txcop:outputProfiles>

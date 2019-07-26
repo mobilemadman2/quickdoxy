@@ -1,0 +1,51 @@
+\setlength{\columnseprule}{0.4pt}
+\setlength\parindent{0pt}
+
+% =================================================================================================
+\newtcolorbox{ImportantBox}[2][]{enhanced,
+    fonttitle=\ttfamily,
+    fontupper=\ttfamily,
+    sharp corners,
+		leftrule=1mm,
+		rightrule=0.25mm,
+		bottomrule=0.25mm,
+		toprule=0.25mm,
+    colback=white,
+    colbacktitle=white,
+    coltitle=black,
+    boxed title style={colframe=white},
+    attach boxed title to top center={yshift=-5.5mm}, 
+    title=#2,#1}
+\newenvironment{IMPORTANT}[1][]
+{
+	\begin{ImportantBox}{\tikz{\node at (0,-.5) {\includegraphics[height=0.5cm]{../includes/icon_important.png}}}}
+	\begin{minipage}{\textwidth}
+}
+{
+\end{minipage}
+\end{ImportantBox}
+}
+
+% =================================================================================================
+\newenvironment{USEFUL}[1][]
+{
+	\begin{ImportantBox}{\tikz{\node at (0,-.5) {\includegraphics[height=0.6cm]{../includes/icon_info.png}}}}
+	\begin{minipage}{\textwidth}
+}
+{
+\end{minipage}
+\end{ImportantBox}
+}
+
+% =================================================================================================
+\newenvironment{BUG}[1][]
+{
+	\begin{ImportantBox}{\tikz{\node at (0,-.5) {\includegraphics[height=0.6cm]{../includes/icon_bug.png}}}}
+	\begin{minipage}{\textwidth}
+}
+{
+\end{minipage}
+\end{ImportantBox}
+}
+
+% =================================================================================================

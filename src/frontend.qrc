@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/">
+  
+    <file alias="docu">includes/icon_docu.png</file>
+    <file alias="info">includes/icon_info.png</file>
+    <file alias="log">includes/icon_log.png</file>
+    <file alias="run">includes/icon_run.png</file>
+    <file alias="docupdf">docu/out/docu.pdf</file>
+    <file alias="about">docu/about.info</file>
+    <file alias="icon_main">includes/icon_main.png</file>
+
+  </qresource>
+</RCC>
